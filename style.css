@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  border: none;
+  outline: none;
+  text-decoration: none;
+  color: black;
+}
+:root {
+  --primary: black;
+  --secoundary: white;
+}
+[class*="grid"] {
+  display: grid;
+}
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+p,
+a,
+input,
+select,
+textarea,
+button {
+  font-size: 1.6rem;
+}
+img,
+video {
+  max-width: 100%;
+}
+.container {
+  max-width: 1240px;
+  padding: 0 2rem;
+  margin: auto;
+  width: 100%;
+}
+button {
+  padding: 1.5rem 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: var(--primary);
+  color: var(--secoundary);
+}
+
+section {
+  padding: 8rem 0;
+}
+/* header section */
+header {
+  height: 8rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  background: transparent;
+  border-bottom: 1px solid #00000022;
+}
+header.sticky {
+  background: #000000;
+  transition: 0.3s;
+  border: unset;
+}
+header.sticky .links a {
+  color: white;
+}
+header.sticky button {
+  color: white;
+  border-color: white;
+}
+.logo img {
+  height: 6rem;
+}
+header .container {
+  height: 100%;
+  max-width: 100%;
+  padding: 0 5rem;
+}
+header .container,
+.links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+}
+.menu {
+  font-size: 3rem;
+  display: none;
+}
+/* header section end */
+
+@media (max-width: 1024px) {
+  html {
+    font-size: 45%;
+  }
+  .container {
+    padding: 0 1.5rem;
+  }
+}
+@media (max-width: 660px) {
+  html {
+    font-size: 60%;
+  }
+  header .container {
+    padding: 0 1.5rem;
+    align-items: center;
+    height: 100%;
+  }
+  .menu {
+    display: block;
+  }
+  header .links {
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    height: calc(100vh - 8rem);
+    position: fixed;
+    top: 8rem;
+    background: #000000b8;
+    backdrop-filter: blur(15px);
+    width: 100%;
+    padding: 5rem 0;
+    left: 0px;
+    transition: all 0.3s ease 0s;
+    transform: translateX(100%);
+  }
+  .active {
+    transform: translateX(0%) !important;
+  }
+  header .links a {
+    color: white;
+  }
+  section {
+    padding: 5rem 0;
+    overflow: hidden;
+  }
+  header.sticky .menu {
+    color: white;
+  }
+  [class*="grid"],
+  .active {
+    grid-template-columns: 1fr !important;
+    gap: 5rem !important;
+  }
+  .fix {
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+}
